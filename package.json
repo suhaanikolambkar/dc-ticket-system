@@ -1,0 +1,22 @@
+{
+  "name": "dc-ticket-system",
+  "private": true,
+  "workspaces": [
+    "load-balancer",
+    "server1",
+    "server2",
+    "server3",
+    "frontend"
+  ],
+  "scripts": {
+    "start:all": "concurrently -n LB,S1,S2,S3,WEB -c blue,green,magenta,yellow,cyan \"npm run dev --workspace load-balancer\" \"npm run dev --workspace server1\" \"npm run dev --workspace server2\" \"npm run dev --workspace server3\" \"npm run dev --workspace frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.103.0",
+    "dotenv": "^17.4.1",
+    "node-fetch": "^3.3.2"
+  }
+}

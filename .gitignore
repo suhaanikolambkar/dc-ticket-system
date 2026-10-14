@@ -1,0 +1,15 @@
+node_modules
+.next
+npm-debug.log*
+
+# Environment files - never upload secrets
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+
+.DS_Store
+load-balancer/index.js.save
